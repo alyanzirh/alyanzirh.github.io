@@ -33,4 +33,10 @@
     // TOOLTIP
     $('.social-links a').tooltip();
 
+    // Prevent default behavior for mailto link
+    $('.custom-btn-group a[href^="mailto:"]').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = $(this).attr('href');
+    });
+
 })(jQuery);
